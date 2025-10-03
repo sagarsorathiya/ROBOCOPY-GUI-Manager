@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional ROBOCOPY GUI Manager - Standalone Windows executable for easy file operations">
+    <meta name="keywords" content="ROBOCOPY, GUI, Windows, File Manager, Backup, Sync, System Admin">
+    <meta name="author" content="Sagar Sorathiya">
+    <title>ROBOCOPY GUI Manager - Professional Edition</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header .subtitle {
+            font-size: 1.3em;
+            opacity: 0.95;
+            margin-bottom: 30px;
+        }
+
+        .badges {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .badge {
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            backdrop-filter: blur(10px);
+        }
+
+        .download-section {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 50px;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .file-info {
+            color: #666;
+            margin-top: 15px;
+            font-size: 1.1em;
+        }
+
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .highlight-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .highlight-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .highlight-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .highlight-card li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .highlight-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .features-section {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .features-section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .feature-item {
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .feature-item h4 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .screenshot-section {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .screenshot-placeholder {
+            background: white;
+            border-radius: 15px;
+            padding: 60px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            color: #666;
+            font-size: 1.2em;
+        }
+
+        .quick-start {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .quick-start h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .quick-start ol {
+            padding-left: 20px;
+            font-size: 1.1em;
+            line-height: 2;
+        }
+
+        .quick-start ol li {
+            margin: 10px 0;
+        }
+
+        .system-requirements {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .system-requirements h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 50px;
+            border-radius: 15px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .github-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 30px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 25px;
+            transition: background 0.3s;
+        }
+
+        .github-link:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .download-btn {
+                padding: 15px 30px;
+                font-size: 1.2em;
+            }
+
+            .highlights {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 ROBOCOPY GUI Manager</h1>
+            <p class="subtitle">Professional Edition - Make System Admin Life Easy</p>
+            <div class="badges">
+                <span class="badge">Python 3.13.5</span>
+                <span class="badge">Windows 7+</span>
+                <span class="badge">10.8 MB</span>
+                <span class="badge">Zero Dependencies</span>
+                <span class="badge">MIT License</span>
+            </div>
+        </header>
+
+        <div class="download-section">
+            <h2>📥 Download Standalone Executable</h2>
+            <a href="https://github.com/sagarsorathiya/ROBOCOPY-GUI-Manager/raw/main/dist/RobocopyGUI.exe" class="download-btn">
+                ⬇️ Download RobocopyGUI.exe
+            </a>
+            <div class="file-info">
+                <strong>File Size:</strong> 10.8 MB | <strong>Latest Build:</strong> October 3, 2025
+            </div>
+            <div class="system-requirements">
+                <h3>System Requirements</h3>
+                <p><strong>OS:</strong> Windows 7, 8, 10, 11 (64-bit)</p>
+                <p><strong>Installation:</strong> None - Just download and run!</p>
+                <p><strong>Dependencies:</strong> None - Completely self-contained</p>
+            </div>
+        </div>
+
+        <div class="highlights">
+            <div class="highlight-card">
+                <h3>⚡ Key Features</h3>
+                <ul>
+                    <li>Standalone executable (10.8 MB)</li>
+                    <li>Zero installation required</li>
+                    <li>Three-column optimized layout</li>
+                    <li>Dual summary display</li>
+                    <li>Color-coded results</li>
+                    <li>Real-time progress monitoring</li>
+                </ul>
+            </div>
+
+            <div class="highlight-card">
+                <h3>🎯 Quick Presets</h3>
+                <ul>
+                    <li>Backup - Complete with security</li>
+                    <li>Sync/Mirror - Directory sync</li>
+                    <li>Move - Transfer files</li>
+                    <li>Custom - Advanced options</li>
+                    <li>Integrated in main layout</li>
+                    <li>One-click operation</li>
+                </ul>
+            </div>
+
+            <div class="highlight-card">
+                <h3>🛡️ Enterprise Ready</h3>
+                <ul>
+                    <li>ERROR 5 solutions built-in</li>
+                    <li>Permission management</li>
+                    <li>Network path support</li>
+                    <li>Multi-threading (up to 128)</li>
+                    <li>Detailed logging</li>
+                    <li>Command history</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="quick-start">
+            <h2>🚀 Quick Start Guide</h2>
+            <ol>
+                <li><strong>Download:</strong> Click the download button above to get RobocopyGUI.exe</li>
+                <li><strong>Save:</strong> Save the file to your computer (no installation needed!)</li>
+                <li><strong>Run:</strong> Double-click RobocopyGUI.exe to launch</li>
+                <li><strong>Select Paths:</strong> Choose source and destination directories</li>
+                <li><strong>Choose Preset:</strong> Click Backup, Sync, Move, or Custom</li>
+                <li><strong>Execute:</strong> Click "Execute ROBOCOPY" and monitor progress</li>
+                <li><strong>View Results:</strong> See color-coded summary in Performance Monitor tab</li>
+            </ol>
+        </div>
+
+        <div class="features-section">
+            <h2>✨ Advanced Features</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h4>🎨 Modern UI</h4>
+                    <p>Professional three-column layout with full-width command preview and intuitive controls</p>
+                </div>
+                <div class="feature-item">
+                    <h4>📊 Real-time Monitoring</h4>
+                    <p>Live progress bars, transfer statistics, performance metrics, and ETA calculations</p>
+                </div>
+                <div class="feature-item">
+                    <h4>🔍 Dual Summary Display</h4>
+                    <p>Operation summaries in both Output and Performance Monitor tabs with auto-switch</p>
+                </div>
+                <div class="feature-item">
+                    <h4>⚙️ Complete ROBOCOPY Integration</h4>
+                    <p>Support for all ROBOCOPY parameters, switches, and advanced configurations</p>
+                </div>
+                <div class="feature-item">
+                    <h4>💾 Configuration Management</h4>
+                    <p>Save, restore, export, and import settings with profile management</p>
+                </div>
+                <div class="feature-item">
+                    <h4>🚀 Performance Optimization</h4>
+                    <p>Multi-threading support, unbuffered I/O, and smart resource management</p>
+                </div>
+                <div class="feature-item">
+                    <h4>🛡️ Safety Features</h4>
+                    <p>List-only mode, path validation, destructive operation warnings</p>
+                </div>
+                <div class="feature-item">
+                    <h4>📈 Enterprise Features</h4>
+                    <p>Batch operations, network paths, audit trails, security integration</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="features-section">
+            <h2>🎯 Why Choose ROBOCOPY GUI Manager?</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h4>✅ No Installation</h4>
+                    <p>Copy and run anywhere - USB drives, network shares, or local systems</p>
+                </div>
+                <div class="feature-item">
+                    <h4>✅ Zero Dependencies</h4>
+                    <p>No Python, no libraries, no admin rights - completely self-contained</p>
+                </div>
+                <div class="feature-item">
+                    <h4>✅ Professional Interface</h4>
+                    <p>Intuitive layout designed for system administrators and power users</p>
+                </div>
+                <div class="feature-item">
+                    <h4>✅ Complete Solution</h4>
+                    <p>All ROBOCOPY features accessible through user-friendly GUI</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="screenshot-section">
+            <div class="screenshot-placeholder">
+                <p>📸 Application Screenshots Coming Soon</p>
+                <p>Three-column layout with integrated quick presets and real-time monitoring</p>
+            </div>
+        </div>
+
+        <div class="features-section">
+            <h2>📚 Documentation</h2>
+            <p style="margin-bottom: 20px;">Comprehensive documentation is available in the repository:</p>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h4>📖 User Guide</h4>
+                    <p>Complete walkthrough of all features and capabilities</p>
+                </div>
+                <div class="feature-item">
+                    <h4>⚙️ Advanced Configuration</h4>
+                    <p>Performance tuning, monitoring, and enterprise deployment</p>
+                </div>
+                <div class="feature-item">
+                    <h4>🔧 Troubleshooting</h4>
+                    <p>Common issues, solutions, and optimization tips</p>
+                </div>
+                <div class="feature-item">
+                    <h4>💻 Developer Info</h4>
+                    <p>Technical specifications and build instructions</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p><strong>Developed by Sagar Sorathiya</strong></p>
+            <p>Made with ❤️ for system administrators and power users</p>
+            <a href="https://github.com/sagarsorathiya/ROBOCOPY-GUI-Manager" class="github-link" target="_blank">
+                View on GitHub →
+            </a>
+            <p style="margin-top: 30px; opacity: 0.8;">
+                MIT License - Feel free to use, modify, and distribute
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
