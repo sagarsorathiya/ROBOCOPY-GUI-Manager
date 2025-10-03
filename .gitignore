@@ -5,7 +5,7 @@ command_history.txt
 
 # Build artifacts
 build/
-dist/
+# dist/ - ALLOWING dist folder for executable distribution
 __pycache__/
 *.pyc
 *.pyo
@@ -41,7 +41,7 @@ desktop.ini
 *.toc
 *.pyz
 *.exe.manifest
-*.exe
+# *.exe - ALLOWING RobocopyGUI.exe for distribution
 
 # Coverage reports
 htmlcov/

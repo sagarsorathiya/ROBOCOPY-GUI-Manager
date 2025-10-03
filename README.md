@@ -8,6 +8,23 @@
 
 A comprehensive, professional-grade GUI application for Windows ROBOCOPY command management. Designed to make system administrators' lives easier with advanced features, optimized performance, and standalone executable distribution.
 
+---
+
+## 📥 **DOWNLOAD STANDALONE EXECUTABLE**
+
+### **🎯 Direct Download (10.8 MB)**
+**[⬇️ Download RobocopyGUI.exe](https://github.com/sagarsorathiya/ROBOCOPY-GUI-Manager/raw/main/dist/RobocopyGUI.exe)**
+
+**Quick Start:**
+1. Click download link above
+2. Save `RobocopyGUI.exe` to your computer
+3. Double-click to run - No installation needed!
+4. No Python, no dependencies, just run!
+
+**System Requirements:** Windows 7/8/10/11 (64-bit)
+
+---
+
 ## 🎯 **Key Highlights**
 
 - ✅ **Standalone Executable**: 10.8 MB self-contained `.exe` - runs on any Windows PC without dependencies
@@ -25,12 +42,17 @@ A comprehensive, professional-grade GUI application for Windows ROBOCOPY command
 ## 📦 **Distribution Options**
 
 ### **🚀 Standalone Executable (Recommended)**
+
+**[⬇️ DIRECT DOWNLOAD - RobocopyGUI.exe (10.8 MB)](https://github.com/sagarsorathiya/ROBOCOPY-GUI-Manager/raw/main/dist/RobocopyGUI.exe)**
+
 - **File**: `dist/RobocopyGUI.exe` (10.8 MB)
+- **Direct Download**: [Click here to download](https://github.com/sagarsorathiya/ROBOCOPY-GUI-Manager/raw/main/dist/RobocopyGUI.exe)
 - **Requirements**: None - completely self-contained
 - **Deployment**: Copy to any Windows PC and run
 - **Distribution**: USB, email, network share, software repository
 - **Latest Build**: October 3, 2025 - with dual summary display feature
-- **Latest Build**: October 3, 2025 with dual summary display feature
+
+**Installation:** No installation needed! Just download and run.
 
 ### **� Python Source Code**
 - **Requirements**: Python 3.11+ with tkinter
