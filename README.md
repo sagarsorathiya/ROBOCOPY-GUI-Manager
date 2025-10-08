@@ -611,11 +611,11 @@ The standalone executable includes:
 - **Keyboard Shortcuts**: Help → Keyboard Shortcuts
 - **ROBOCOPY Docs**: Help → ROBOCOPY Documentation
 
-## �‍💻 Developer
+## 💻 Developer
 
 **Developed by Sagar Sorathiya**
 
-## �📄 License
+## 📄 License
 
 MIT License - Feel free to use, modify, and distribute.
 
